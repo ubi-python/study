@@ -5,6 +5,8 @@ def factorial(num):
 
 
 print('한글')
+print ('Welcome to Ubivelox Python Study!!!')
+
 
 result = factorial(8)
 print(result)
