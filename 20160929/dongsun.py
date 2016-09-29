@@ -10,4 +10,4 @@
 val = int(input("출력할 구구단을 입력하세요:"))
 
 for x in range(1, 10):
-    print("{} * {} = {}".format(val, x, val * x))
+    print('{} * {} = {}'.format(val, x, val * x))
