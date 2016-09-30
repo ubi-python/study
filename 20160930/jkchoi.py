@@ -28,3 +28,5 @@ print("result : " + result)
 orimap = "abcdefghijklmnopqrstuvwxyz"
 newmap = "cdefghijklmnopqrstuvwxyzab"
 print(data.translate(str.maketrans(orimap,newmap)))
+
+print("map".translate(str.maketrans(orimap,newmap)))
