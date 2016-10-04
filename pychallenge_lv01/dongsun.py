@@ -5,14 +5,15 @@ inputText = "g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq ypc dmp
 
 outputText = ""
 
-for i in range(0, len(inputText)):
+for i in inputText:
 
-    if 97 <= ord(inputText[i]) <= 120:  # a~x 문자 변경
-        outputText += chr(ord(inputText[i]) + 2)
-    elif ord(inputText[i]) == 121 or ord(inputText[i]) == 122:  # y->a or z->b로 변경
-        outputText += chr(ord(inputText[i]) + 2 - 26)
+    if not i.isalpha():
+        outputText += i
+
+    elif ord(i) < 121:
+        outputText += chr(ord(i) + 2)
     else:
-        outputText += inputText[i]
+        outputText += chr(ord(i) + 2 - 26)
 
 # 변경 문자열 출력
 print(outputText)
