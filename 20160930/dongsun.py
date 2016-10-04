@@ -21,6 +21,7 @@ for i in range(0, len(inputText)):
     else:
         outputText += inputText[i]
 
+# 변경 문자열 출력
 print(outputText)
 
 # 정답 후 maketrans 사용법 적용
