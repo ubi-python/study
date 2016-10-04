@@ -1,11 +1,4 @@
 # coding=utf-8
-# 1번 문제 : 2의 38 값 구하기
-
-result = pow(2, 38)
-print(result)
-
-# 2의 38 값 = 274877906944
-
 # 2번 문제
 
 inputText = "g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq ypc dmp. bmgle gr gl zw fylb gq glcddgagclr ylb rfyr'q ufw rfgq rcvr gq qm jmle. sqgle qrpgle.kyicrpylq() gq pcamkkclbcb. lmu ynnjw ml rfc spj."
