@@ -1,5 +1,3 @@
-import string
-
 base  =2
 pow = 38
 n = base
