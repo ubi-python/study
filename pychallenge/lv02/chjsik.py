@@ -14,7 +14,7 @@ for line in lines:
 
 result = ""
 for key in map.keys():
-    if (map[key] == 1):
+    if map[key] == 1:
         result += key
 
 print(result)
