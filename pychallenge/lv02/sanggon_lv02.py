@@ -1,4 +1,6 @@
-chr_dict = dict()
+import collections
+
+chr_dict = collections.OrderedDict()
 
 with open('mess.txt', 'r') as openfile:
     lines = openfile.readlines()
@@ -10,5 +12,10 @@ for line in lines:
         else:
             chr_dict[chr] += 1
 
-sorted(chr_dict.items(), key=lambda items: items[1][0])
-print(chr_dict)
+# sorted(chr_dict)
+rare_chr_dict = collections.OrderedDict((key, value) for key, value in chr_dict.items() if value < 100)
+print(rare_chr_dict.keys())
+
+print(len(rare_chr_dict.keys()))
+
+# u i q t a e y l
