@@ -1,5 +1,6 @@
 import urllib.request
 import collections
+import pickle
 
 
 content = urllib.request.urlopen("http://www.pythonchallenge.com/pc/def/banner.p").read()
@@ -7,25 +8,21 @@ content = urllib.request.urlopen("http://www.pythonchallenge.com/pc/def/banner.p
 #print(content)
 #print(type(content))
 
-ex = content.decode("utf-8")
-#print(text)
+ex = pickle.loads(content)
+print(ex)
+print(type(ex))
+
+for string in ex:
+#    print(string)
+#    print(type(string))
+    val = ""
+    for innerString in string:
+#        print(innerString)
+#        print(type(innerString))
+
+        for i in range(0, innerString[1]):
+            val += innerString[0]
+    print(val)
 
 
-
-dict = collections.OrderedDict()
-for i in range(0, len(ex)):
-    c = ex[i]
-    if ( c in dict.keys() ):
-        dict[c] = dict[c] + 1
-    else:
-        dict[c] = 1
-
-print (dict)
-
-result = ""
-for key in dict.keys():
-    if ( 100 < dict[key]):
-        result += key
-
-print (result)
-
+# channel
