@@ -40,3 +40,4 @@ while True :
 
 print(comment)
 # result : http://www.pythonchallenge.com/pc/def/hockey.html
+# result : http://www.pythonchallenge.com/pc/def/oxygen.html
