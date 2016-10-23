@@ -15,7 +15,6 @@ def request_url_for_nothing(nothing, count):
     res = r.data.decode("utf-8")
 
     if res == 'Yes. Divide by two and keep going.':
-        print('yes!!!!!!!!!!!!!!!!!!!!!!!!!!!1')
         nothing = int(nothing) / 2
         r = http_pool.request('GET', 'http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing={}'.format(nothing))
         res = r.data.decode("utf-8")
