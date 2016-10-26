@@ -2,7 +2,17 @@ import collections
 import re
 from zipfile import *
 
-findnothing = re.compile(r"nothing is (\d+)").search
+
+def find_nothing_from_value(val):
+    # print(val)
+    match = re.compile(r"Next nothing is (\d+)").search(val)
+    if match:
+        return match.group(1)
+    else:
+        return None
+
+
+answer = ''
 q_dic = collections.OrderedDict()
 try:
     with ZipFile('channel.zip', 'r') as channelZip:
@@ -15,19 +25,15 @@ except BadZipfile:
 
 condition = '90052'
 
-for k, v in q_dic.items():
-    # print('{0} : {1}'.format(k, v))
-    if condition in k:
-        print('find from key')
-        match = findnothing(v)
-        if match:
-            condition = match.group(1)
-            print('next condition is {}'.format(condition))
-    elif condition in v:
-        print('find from value')
-        match = re.compile(r"(\d+).txt").search(k)
-        if match:
-            condition = match.group(1)
-            print('next condition is {}'.format(condition))
-    else:
-        continue
+zip = ZipFile('channel.zip', 'r')
+
+while True:
+    if not condition:
+        break
+    print(zip.getinfo(condition + '.txt').comment.decode("utf-8"), end='')
+    condition = find_nothing_from_value(q_dic[condition + '.txt'])
+
+zip.close()
+
+
+# result = Collect the comments.
