@@ -37,8 +37,9 @@ for i in range(999,100,-1) :
 
 # 대칭수 리스트 정렬
 correct.sort()
-# 대칭수 마지막 값 출력
-print(correct[len(correct)-1])
+# 대칭수 리스트 최대값 출력
+print(max(correct))
+
 
 # 906609
 
