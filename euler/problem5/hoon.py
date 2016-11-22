@@ -13,11 +13,15 @@ while 1:
 
     # 반복 종료 조건 : 값 찾을 경우
     if correct == True :
-        print(value)
+        print("answer : ", value)
         break
 
     # 값 증가
     value += 1
+
+    # 1,000,000 단위 마다 화면 표시
+    if value % 1000000 == 0 :
+        print ("now checking value : %d"  %value)
 
     # 1부터 20까지 나눔
     for i in range(1,21):
