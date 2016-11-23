@@ -12,8 +12,8 @@ def isPalindrome(n):
     return True
 
 result = 0
-for i in range(1, 999):
-    for j in range(1, 999):
+for i in range(100, 999):
+    for j in range(100, 999):
         n = i * j
 
         if (isPalindrome(n) ):
