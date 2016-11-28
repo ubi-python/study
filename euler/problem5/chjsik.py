@@ -3,9 +3,9 @@ result = 2
 
 def gcd(a, b):
     while b != 0:
-        temp = a % b
+        remainder = a % b
         a = b
-        b = temp
+        b = remainder
     return abs(a)
 
 
