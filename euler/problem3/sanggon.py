@@ -22,4 +22,5 @@ def search_prime_number(limit):
 
 
 an = search_prime_number(input_num)
+
 print('답 : {}'.format(an))
