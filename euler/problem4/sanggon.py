@@ -34,18 +34,17 @@ def is_palindrome2(check_num):
         return True
 
 
+candidate = 0
 chk = True
+
+loop_cnt = 0
 for fnum in range(999, 100, -1):
-    print('=========={}==========='.format(fnum))
-    for snum in range(999, 100, -1):
+    for snum in range(fnum, 100, -1):
+        loop_cnt += 1
         palindrome = fnum * snum
-        chk = is_palindrome(palindrome)
-        if chk:
-            print('{} * {} = {}'.format(fnum, snum, palindrome))
-            break
-    if chk:
-        break
-
-
-
-# 인수분해??
+        if palindrome > candidate:
+            chk = is_palindrome(palindrome)
+            if chk:
+                candidate = palindrome
+                print('{} * {} = {}'.format(fnum, snum, palindrome))
+print('답 : ', candidate, '이걸 뽑기 위해서 loop를 ', loop_cnt, '돌았다')
