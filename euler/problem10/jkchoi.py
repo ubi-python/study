@@ -1,12 +1,11 @@
+_list = []
 
 def isPrime(val):
-    i = 2
-    while ( 0 != val % i):
-        i += 1
-    if (i == val):
-        return True
-    return False
+    for n in _list:
+        if ( 0 == val % n):
+            return False
 
+    return True
 
 result = 0
 for i in range(2, 2000000):
@@ -15,6 +14,7 @@ for i in range(2, 2000000):
         print("progress : " + str(i))
 
     if ( isPrime(i)):
+        _list.append(i)
         result += i
 
 print(result)
