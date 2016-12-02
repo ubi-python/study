@@ -27,15 +27,42 @@ def getPositionVal(x, y):
         return 0
     return list[x][y]
 
-print(getPositionVal(3,19))
-print(getPositionVal(-3,19))
-print(getPositionVal(3,20))
-print(getPositionVal(3,29))
-
 def getMaxVal(x, y):
     maxVal = 0
 
     #up
-    getMaxVal(x,y) * getMaxVal(x-1,y) *getMaxVal(x-2,y) *getMaxVal(x-3,y)
+    val = getPositionVal(x, y) * getPositionVal(x-1, y) * getPositionVal(x-2, y) * getPositionVal(x-3, y)
+    if ( val > maxVal ):
+        maxVal = val
+    #down
+        val = getPositionVal(x, y) * getPositionVal(x + 1, y) * getPositionVal(x + 2, y) * getPositionVal(x + 3, y)
+    if (val > maxVal):
+        maxVal = val
+    #left
+    val = getPositionVal(x, y) * getPositionVal(x, y-1) * getPositionVal(x, y-2) * getPositionVal(x, y-3)
+    if (val > maxVal):
+        maxVal = val
+    #right
+    val = getPositionVal(x, y) * getPositionVal(x, y+1) * getPositionVal(x, y+2) * getPositionVal(x, y+3)
+    if (val > maxVal):
+        maxVal = val
+    # diagonally 1
+    val = getPositionVal(x, y) * getPositionVal(x+1, y+1) * getPositionVal(x+2, y+2) * getPositionVal(x+3, y+3)
+    if (val > maxVal):
+        maxVal = val
+    # diagonally 2
+    val = getPositionVal(x, y) * getPositionVal(x+1, y-1) * getPositionVal(x+2, y-2) * getPositionVal(x+3, y-3)
+    if (val > maxVal):
+        maxVal = val
 
 
+    return maxVal
+
+result = 0
+for xi in range(0,20):
+    for yi in range(0,20):
+        newVal = getMaxVal(xi, yi)
+        if ( newVal > result):
+            print(str(xi) + " : " + str(yi) + " : " + str(newVal))
+            result = newVal
+print(result)
