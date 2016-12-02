@@ -10,3 +10,10 @@
 
 그러면 1부터 100까지 자연수에 대해 "합의 제곱"과 "제곱의 합"의 차이는 얼마입니까?
 """
+hap =0
+sum=0
+for i in range(1,101):
+    hap = hap +pow( i,2)
+    sum = sum+i
+print( abs( hap - pow(sum,2)))
+
