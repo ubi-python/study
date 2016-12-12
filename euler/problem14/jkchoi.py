@@ -34,3 +34,6 @@ for i in range(1, 1000001):
         result = new
 
 print("result : " + str(number) + " : " + str(result) )
+
+
+# 837799
