@@ -55,34 +55,22 @@ def compareNum(first):
             first = subStr
     return first
 
-def nogada(first):
+def nogada():
+    maxValue = 1
     for i in range( 0, len(data)-4):
         subStr = list(data [i:i+5])
-        remainNum = []
-        if( i == 0):
-            first= subStr[0:]
-            continue
+        mul = 1
 
-        tempFirst = first[0:]
         for x in subStr:
-            if( x in tempFirst):
-                tempFirst.remove(x)
-            else:
-                remainNum.append(x)
-        firstMut =1
-        secondMut = 1
-        for x in tempFirst:
-            firstMut *= int(x)
-        for x in remainNum:
-            secondMut *= int(x)
-        if( secondMut > firstMut):
-            first = subStr
-    return first
+            mul *= int(x)
+        if( mul > maxValue):
+            maxValue = mul
+    return maxValue
 
 #first=compareNum(first)
-first=nogada(first)
-print(first)
-result = 1
-for n in first:
-    result*= int(n)
+#print(first)
+#result = 1
+#for n in first:
+#    result*= int(n)
+result=nogada()
 print(result)
