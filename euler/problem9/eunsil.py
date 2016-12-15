@@ -4,3 +4,17 @@
 
 a + b + c = 1000 인 피타고라스 수 a, b, c는 한 가지 뿐입니다. 이 때, a × b × c 는 얼마입니까?
 """
+
+#경우의 수 : a=1일때 b=2~ (1000-a)/2
+# a=2 일때 .... a= a<b<c에 의해 1000/3 까지만 해도 됨.
+import math
+
+for a in range(1,int(1000/3)):
+    for b in range(a+1, int((1000-a)/2)):
+        leftValue = (a * a) + (b * b)
+        tempC=math.sqrt(leftValue)
+        if( tempC == int(tempC)  and (a+b+tempC)== 1000) :
+            print(a*b*tempC)
+            break
+
+
