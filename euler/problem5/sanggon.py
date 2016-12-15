@@ -14,7 +14,7 @@ def lcm(a, b):
     return (a * b) / gcd(a, b)
 
 
-for i in range(2, 20):
+for i in range(2, 21):
     start_num = lcm(start_num, i + 1)
 
 print("답 : {}".format(start_num))
