@@ -8,6 +8,7 @@
 base_prime_num = list()
 base_prime_num.append(2)
 
+perf_count = 0
 
 def is_divide_by_prime_num(num):
     for x in base_prime_num:
