@@ -18,3 +18,31 @@
 
 그러면 500개 이상의 약수를 갖는 가장 작은 삼각수는 얼마입니까?
 """
+
+def getDivisor(start, limit):
+    sum =0
+    n =start
+    while True :
+        divisors=[]
+        lastNum=0
+        sum+=n
+        #print(sum)
+        halfNum=int(sum/2)
+        for i in range(1,halfNum):
+            mok=int(sum / i)
+            #print(mok)
+            if( sum == mok *i):
+                # 약수
+                if(  lastNum ==mok):
+                    break
+                divisors.append(i)
+                lastNum =i
+                if( mok == i):
+                    #제곱근
+                    break
+        #print(divisors)
+        if(len(divisors)*2 >=limit ):
+            return sum
+        n +=1
+
+print(getDivisor(1, 500))
