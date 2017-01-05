@@ -23,25 +23,27 @@ def getDivisor(start, limit):
     sum =0
     n =start
     while True :
-        divisors=[]
+        #divisors=[]
+        divisorCount =0
         lastNum=0
         sum+=n
         #print(sum)
-        halfNum=int(sum/2)
-        for i in range(1,halfNum):
+        #alfNum=int(sum/2)
+        for i in range(1,sum):
             mok=int(sum / i)
             #print(mok)
             if( sum == mok *i):
                 # 약수
                 if(  lastNum ==mok):
                     break
-                divisors.append(i)
+                #divisors.append(i)
+                divisorCount+=1
                 lastNum =i
                 if( mok == i):
                     #제곱근
                     break
         #print(divisors)
-        if(len(divisors)*2 >=limit ):
+        if(divisorCount*2 >=limit ):
             return sum
         n +=1
 
