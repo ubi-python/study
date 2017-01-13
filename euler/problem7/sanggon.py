@@ -29,7 +29,7 @@ def is_prime_num(num, base):
 def count_prime_num(start, question):
     count = 1
     max_prime_num = 1
-    while True:
+    while count != question:
         if not is_divide_by_prime_num(start):
             if is_prime_num(start, max_prime_num + 1):
                 count += 1
@@ -37,8 +37,7 @@ def count_prime_num(start, question):
                 base_prime_num.append(max_prime_num)
                 #                print("소수 개수 : ", count, ", max : ", max_prime_num)
         start += 1
-        if count == question:
-            break
+
     return base_prime_num[-1]
 
 
