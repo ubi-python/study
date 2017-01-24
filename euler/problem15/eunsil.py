@@ -17,14 +17,12 @@ def increase(startRow, startCol, maxCount, count):
         colCount += 1
     return rowCount+colCount
 
+def count(startRow, startCol, maxCount):
+    if( startRow == maxCount or startCol == maxCount):
+        return 1
+    else:
+        rowCount = count(startRow+1, startCol, maxCount)
+        colCount = count(startRow, startCol + 1, maxCount)
+    return rowCount+colCount
 
-
-
-
-def getRouteCount( row, col):
-    count = 0
-    count2 = 0
-
-    return increase( 0,0 ,row,0)
-
-print( getRouteCount( 2,2))
+print( count( 0,0,20))
